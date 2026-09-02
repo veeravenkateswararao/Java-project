@@ -1,15 +1,12 @@
 package com.example;
 
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
 public class App {
-    public static String greet(String name) {
-        if (name == null || name.isBlank()) {
-            return "Hello, World!";
-        }
-        return "Hello, " + name + "!";
-    }
 
     public static void main(String[] args) {
-        System.out.println(greet("Jenkins"));
+        SpringApplication.run(App.class, args);
     }
 }
-
