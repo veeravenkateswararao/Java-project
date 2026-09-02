@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>DevOps Dashboard</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="sidebar">
+    <h2>DevOps</h2>
+
+    <a href="#">Dashboard</a>
+    <a href="#">Builds</a>
+    <a href="#">Deployments</a>
+    <a href="#">Servers</a>
+</div>
+
+<div class="main">
+
+    <div class="header">
+        <h1>DevOps Dashboard</h1>
+        <span>Production</span>
+    </div>
+
+    <div class="cards">
+
+        <div class="card">
+            <h3>Total Builds</h3>
+            <p>128</p>
+        </div>
+
+        <div class="card">
+            <h3>Successful</h3>
+            <p>120</p>
+        </div>
+
+        <div class="card">
+            <h3>Failed</h3>
+            <p>8</p>
+        </div>
+
+        <div class="card">
+            <h3>Success Rate</h3>
+            <p>94%</p>
+        </div>
+
+    </div>
+
+    <div class="pipeline">
+
+        <h2>Jenkins Pipeline</h2>
+
+        <div class="pipeline-flow">
+
+            <div class="stage success">
+                <h3>✓ Build</h3>
+                <p>SUCCESS</p>
+            </div>
+
+            <div class="arrow">→</div>
+
+            <div class="stage success">
+                <h3>✓ Test</h3>
+                <p>SUCCESS</p>
+            </div>
+
+            <div class="arrow">→</div>
+
+            <div class="stage success">
+                <h3>✓ Docker</h3>
+                <p>SUCCESS</p>
+            </div>
+
+            <div class="arrow">→</div>
+
+            <div class="stage success">
+                <h3>✓ Deploy</h3>
+                <p>SUCCESS</p>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="builds">
+
+        <h2>Recent Builds</h2>
+
+        <table>
+
+            <tr>
+                <th>Build</th>
+                <th>Branch</th>
+                <th>Status</th>
+                <th>Time</th>
+            </tr>
+
+            <tr>
+                <td>#128</td>
+                <td>main</td>
+                <td class="green">SUCCESS</td>
+                <td>2 min ago</td>
+            </tr>
+
+            <tr>
+                <td>#127</td>
+                <td>develop</td>
+                <td class="green">SUCCESS</td>
+                <td>15 min ago</td>
+            </tr>
+
+            <tr>
+                <td>#126</td>
+                <td>main</td>
+                <td class="red">FAILED</td>
+                <td>30 min ago</td>
+            </tr>
+
+        </table>
+
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
