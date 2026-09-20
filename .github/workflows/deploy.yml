@@ -19,3 +19,6 @@ jobs:
 
       - name: check java version
         run: java --version
+
+      - name: Build
+        run: mvn clean package -DskipTests
