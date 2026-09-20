@@ -49,7 +49,7 @@ jobs:
          mvn sonar:sonar \
             -Dsonar.projectKey=java-project \
             -Dsonar.host.url=${{ secrets.SONAR_HOST_URL }} \
-            -Dsonar.token=${{ secrets.SONAR_TOKEN }}
+            -Dsonar.token=${{ secrets.SONAR_TOKEN }} \
             -Dsonar.qualitygate.wait=true
 
      
