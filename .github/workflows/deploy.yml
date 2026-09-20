@@ -20,11 +20,11 @@ jobs:
       - name: check java version
         run: java --version
       
-       #Here we do clean package and test instead of like this in companies give direct single step
-       #that is mvn clean verify it will do both
-      # - name: Build
+        #Here we do clean package and test instead of like this in companies give direct single step
+        #that is mvn clean verify it will do both
+        # - name: Build
         # run: mvn clean package -DskipTests
-      # - name: Unit Test
+        # - name: Unit Test
         # run: mvn test
 
       - name: Build and Test
