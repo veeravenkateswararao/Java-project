@@ -12,7 +12,6 @@ jobs:
         uses: actions/checkout@v6.1.0
 
       - name: Setup java 11
-        uses: actions/checkout@v7
         uses: actions/setup-java@v6
         with:
           distribution: temurin
