@@ -4,8 +4,9 @@ on:
     branches:
       - main
 jobs:
-   checkout:
-     name: checkout
+#1.this is build job
+   build:
+     name: Build and Test
      runs-on: ubuntu-latest
      steps:
       - name: checkout code 
@@ -29,3 +30,27 @@ jobs:
 
       - name: Build and Test
         run: mvn clean verify
+#2.sonarqube job
+   sonarqube:
+     name: sonarqube Analysis
+     needs: build
+     runs-on: ubuntu-latest 
+     steps:
+      - name: checkout code 
+        uses: actions/checkout@v6.1.0
+
+      - name: Setup java 11
+        uses: actions/setup-java@v6
+        with:
+          distribution: temurin
+          java-version: '11'
+      - name: SonarQube Analysis and Quality Gate
+        run: | 
+         mvn sonar:sonar \
+            -Dsonar.projectKey=java-project \
+            -Dsonar.host.url=${{ secrets.SONAR_HOST_URL }} \
+            -Dsonar.token=${{ secrets.SONAR_TOKEN }}
+            -Dsonar.qualitygate.wait=true
+
+     
+   
