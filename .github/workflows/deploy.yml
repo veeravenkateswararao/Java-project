@@ -52,7 +52,7 @@ jobs:
             -Dsonar.token=${{ secrets.SONAR_TOKEN }} \
             -Dsonar.qualitygate.wait=true
 
-  #3.Nexus Job
+#3.Nexus Job
     nexus:
       name: Publish Jar to Nexus
       needs: sonarqube
