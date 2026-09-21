@@ -28,6 +28,7 @@ jobs:
       - name: Build and Test
         run: mvn clean verify
 
+
   # 2. SonarQube Job
   sonarqube:
     name: SonarQube Analysis
@@ -51,6 +52,7 @@ jobs:
             -Dsonar.host.url=${{ secrets.SONAR_HOST_URL }} \
             -Dsonar.token=${{ secrets.SONAR_TOKEN }} \
             -Dsonar.qualitygate.wait=true
+
 
   # 3. Nexus Job
   nexus:
@@ -86,6 +88,7 @@ jobs:
       - name: Publish JAR to Nexus
         run: mvn deploy
 
+
   # 4. Docker + Trivy Job
   docker-security:
     name: Docker Build and Trivy Scan
@@ -95,6 +98,16 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v6.1.0
+
+      - name: Download JAR from Nexus
+        run: |
+          curl -f -u "${{ secrets.NEXUS_USERNAME }}:${{ secrets.NEXUS_PASSWORD }}" \
+            -o java-build-dashboard.jar \
+            "http://13.232.209.135:8081/repository/maven-releases-java-project/com/example/java-build-dashboard/1.0.0/java-build-dashboard-1.0.0.jar"
+
+      - name: Verify JAR
+        run: |
+          ls -lh java-build-dashboard.jar
 
       - name: Build Docker image
         run: |
