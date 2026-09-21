@@ -15,7 +15,7 @@
     </parent>
 
     <groupId>com.example</groupId>
-    <artifactId>java-build-jenkins</artifactId>
+    <artifactId>java-build-dashboard</artifactId>
     <version>1.0.0</version>
 
     <name>Java Build Jenkins Demo</name>
