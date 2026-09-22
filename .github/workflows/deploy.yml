@@ -16,11 +16,11 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v6.1.0
 
-      - name: Setup Java 11
+      - name: Setup Java 17
         uses: actions/setup-java@v6
         with:
           distribution: temurin
-          java-version: '11'
+          java-version: '17'
 
       - name: Check Java version
         run: java --version
@@ -39,11 +39,11 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v6.1.0
 
-      - name: Setup Java 11
+      - name: Setup Java 17
         uses: actions/setup-java@v6
         with:
           distribution: temurin
-          java-version: '11'
+          java-version: '17'
 
       - name: SonarQube Analysis and Quality Gate
         run: |
@@ -64,11 +64,11 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v6.1.0
 
-      - name: Setup Java 11
+      - name: Setup Java 17
         uses: actions/setup-java@v6
         with:
           distribution: temurin
-          java-version: '11'
+          java-version: '17'
 
       - name: Configure Maven credentials
         run: |
@@ -103,7 +103,7 @@ jobs:
         run: |
           curl -f -u "${{ secrets.NEXUS_USERNAME }}:${{ secrets.NEXUS_PASSWORD }}" \
             -o java-build-dashboard.jar \
-            "http://43.205.112.114:8081/repository/maven-releases-java-project/com/example/java-build-dashboard/1.0.0/java-build-dashboard-1.0.0.jar"
+            "http://43.205.172.174:8081/repository/maven-releases-java-project/com/example/java-build-dashboard/1.0.0/java-build-dashboard-1.0.0.jar"
 
       - name: Verify JAR
         run: |

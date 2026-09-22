@@ -22,10 +22,8 @@
     <description>DevOps Dashboard Demo</description>
 
     <properties>
-        <java.version>11</java.version>
-         <jackson.version>2.15.0</jackson.version>
-         <logback.version>1.2.13</logback.version>
-        <tomcat.version>9.0.99</tomcat.version>
+        <java.version>17</java.version>
+        
     </properties>
 
     <dependencies>
