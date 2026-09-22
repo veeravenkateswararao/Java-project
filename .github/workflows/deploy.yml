@@ -103,7 +103,7 @@ jobs:
         run: |
           curl -f -u "${{ secrets.NEXUS_USERNAME }}:${{ secrets.NEXUS_PASSWORD }}" \
             -o java-build-dashboard.jar \
-            "http://43.205.172.174:8081/repository/maven-releases-java-project/com/example/java-build-dashboard/1.0.0/java-build-dashboard-1.0.0.jar"
+            "http://43.205.112.114:8081/repository/maven-releases-java-project/com/example/java-build-dashboard/1.0.0/java-build-dashboard-1.0.0.jar"
 
       - name: Verify JAR
         run: |
