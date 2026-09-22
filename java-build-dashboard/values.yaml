@@ -1,0 +1,66 @@
+replicaCount: 2
+
+image:
+  repository: 573992723976.dkr.ecr.ap-south-1.amazonaws.com/java-build-dashboard
+  pullPolicy: IfNotPresent
+  tag: "3599a0d9acf6bb2aa76f1ed512b70d862ecf7b28"
+
+imagePullSecrets: []
+
+nameOverride: ""
+fullnameOverride: ""
+
+serviceAccount:
+  create: true
+  automount: true
+  annotations: {}
+  name: ""
+
+podAnnotations: {}
+podLabels: {}
+
+podSecurityContext: {}
+
+securityContext: {}
+
+service:
+  type: LoadBalancer
+  port: 80
+  targetPort: 8080
+
+ingress:
+  enabled: false
+
+httpRoute:
+  enabled: false
+
+resources:
+  requests:
+    cpu: 250m
+    memory: 256Mi
+  limits:
+    cpu: 500m
+    memory: 512Mi
+
+livenessProbe:
+  httpGet:
+    path: /api/status
+    port: http
+
+readinessProbe:
+  httpGet:
+    path: /api/status
+    port: http
+
+autoscaling:
+  enabled: false
+
+volumes: []
+
+volumeMounts: []
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}

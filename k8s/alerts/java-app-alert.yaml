@@ -1,0 +1,24 @@
+apiVersion: monitoring.coreos.com/v1
+kind: PrometheusRule
+metadata:
+  name: java-build-dashboard-alert
+  namespace: monitoring
+  labels:
+    release: monitoring
+spec:
+  groups:
+    - name: java-build-dashboard
+      rules:
+        - alert: JavaBuildDashboardDown
+          expr: |
+            sum(kube_pod_status_ready{
+              namespace="dev",
+              condition="true",
+              pod=~"java-build-dashboard-.*"
+            }) == 0
+          for: 2m
+          labels:
+            severity: critical
+          annotations:
+            summary: "Java Build Dashboard is down"
+            description: "No java-build-dashboard pod has been ready in the dev namespace for more than 2 minutes."
