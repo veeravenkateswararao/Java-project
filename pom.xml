@@ -68,7 +68,7 @@
         <name>Nexus Releases</name>
              <!-- enter your EC2 public IP here -->
              
-        <url>http://43.205.112.114:8081/repository/maven-releases-java-project//</url>
+        <url>http://13.234.136.186:8081/repository/maven-releases-java-project//</url>
     </repository>
 </distributionManagement>
 
