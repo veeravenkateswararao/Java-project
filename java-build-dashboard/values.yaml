@@ -1,4 +1,4 @@
-replicaCount: 2
+replicaCount: 3
 
 image:
   repository: 573992723976.dkr.ecr.ap-south-1.amazonaws.com/java-build-dashboard
