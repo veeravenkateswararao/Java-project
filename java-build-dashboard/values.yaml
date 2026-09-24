@@ -3,7 +3,7 @@ replicaCount: 3
 image:
   repository: 573992723976.dkr.ecr.ap-south-1.amazonaws.com/java-build-dashboard
   pullPolicy: IfNotPresent
-  tag: "13a292403f89dc3df5424d34bb409ad31daec095"
+  tag: "fc8996c972f41eb0d88173cd15a0d0e5a6c16c5e"
 
 imagePullSecrets: []
 
