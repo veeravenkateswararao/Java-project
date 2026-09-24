@@ -3,7 +3,7 @@ name: Java Banking Dashboard application
 on:
   push:
     branches:
-      - main
+      - 
 
 jobs:
 

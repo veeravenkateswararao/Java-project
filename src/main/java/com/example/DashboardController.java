@@ -1,10 +1,17 @@
 package com.example;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 public class DashboardController {
+
+    private final BuildRecordRepository repository;
+
+    public DashboardController(BuildRecordRepository repository) {
+        this.repository = repository;
+    }
 
     @GetMapping("/api/status")
     public String status() {
@@ -12,7 +19,12 @@ public class DashboardController {
     }
 
     @GetMapping("/api/build")
-    public String build() {
-        return "Build #128 - SUCCESS";
+    public List<BuildRecord> getBuilds() {
+        return repository.findAll();
+    }
+
+    @PostMapping("/api/build")
+    public BuildRecord createBuild(@RequestBody BuildRecord buildRecord) {
+        return repository.save(buildRecord);
     }
 }
